@@ -21,12 +21,16 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './master/footer/footer.component';
 import { HeaderComponent } from './master/header/header.component';
+import { DisplayComponent } from './components/display/display.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    DisplayComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
