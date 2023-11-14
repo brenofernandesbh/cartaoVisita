@@ -1,0 +1,73 @@
+<section class="container">
+  <header class="header">
+    <h2>CARD:</h2>
+  </header>
+  <div class="row">
+    <div class="col-7">
+      <form action="/seu-endereco-de-processamento" method="post" enctype="multipart/form-data">
+        <label for="foto">Adicionar Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+        <input type="submit" value="Enviar">
+      </form>
+      <form action="">
+        <label for="picture">Foto</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="picture"
+          name="picture"
+          placeholder="inserir foto"
+        ><br>
+        <label for="name">Nome</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="name"
+          name="name"
+          placeholder="Seu nome"
+        ><br>
+        <label for="socialMedia1">Link Rede Social</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="socialMedia1"
+          name="socialMedia1"
+          placeholder="cole o link"
+        ><br>
+        <label for="socialMedia2">Link Rede Social</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="socialMedia2"
+          name="socialMedia2"
+          placeholder="cole o link"
+        ><br>
+        <label for="socialMedia3">Link Rede Social</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="socialMedia3"
+          name="socialMedia3"
+          placeholder="cole o link"
+        ><br>
+        <div class="acoes">
+          <button (click)="criarPensamento()" class="botao">Salvar</button>
+          <button (click)="cancelar()" class="botao">Cancelar</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#!" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <br><br>
+  </footer>
+</section>

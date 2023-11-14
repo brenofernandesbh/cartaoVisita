@@ -19,18 +19,24 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './master/footer/footer.component';
-import { HeaderComponent } from './master/header/header.component';
-import { DisplayComponent } from './components/display/display.component';
-import { FormComponent } from './components/form/form.component';
+import { FooterComponent } from './components/master/footer/footer.component';
+import { HeaderComponent } from './components/master/header/header.component';
+import { CardComponent } from './components/cards/card/card.component';
+import { CardCreateComponent } from './components/cards/card-create/card-create.component';
+import { CardReadComponent } from './components/cards/card-read/card-read.component';
+import { CardUpdateComponent } from './components/cards/card-update/card-update.component';
+import { CardDeleteComponent } from './components/cards/card-delete/card-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    DisplayComponent,
-    FormComponent
+    CardComponent,
+    CardCreateComponent,
+    CardReadComponent,
+    CardUpdateComponent,
+    CardDeleteComponent
   ],
   imports: [
     BrowserModule,
