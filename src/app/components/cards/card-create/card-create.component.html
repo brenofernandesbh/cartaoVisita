@@ -1,23 +1,15 @@
 <section class="container">
   <header class="header">
-    <h2>CARD:</h2>
+    <h3>CARD:</h3>
   </header>
   <div class="row">
-    <div class="col-7">
-      <form action="/seu-endereco-de-processamento" method="post" enctype="multipart/form-data">
-        <label for="foto">Adicionar Foto:</label>
-        <input type="file" id="foto" name="foto" accept="image/*">
-        <input type="submit" value="Enviar">
-      </form>
+    <div class="col-7 container-form">
       <form action="">
-        <label for="picture">Foto</label><br>
-        <input
-          type="textarea"
-          class="input"
-          id="picture"
-          name="picture"
-          placeholder="inserir foto"
-        ><br>
+        <form action="../../../../assets/img" method="post" enctype="multipart/form-data">
+          <label for="MyFoto">Adicionar Foto:</label><br>
+          <input type="file" id="MyFoto" name="myFoto" accept="image/*"><br>
+          <input type="submit" value="Enviar">
+        </form><br>
         <label for="name">Nome</label><br>
         <input
           type="textarea"
@@ -25,44 +17,91 @@
           id="name"
           name="name"
           placeholder="Seu nome"
+          [value]="card.name"
         ><br>
-        <label for="socialMedia1">Link Rede Social</label><br>
+        <label for="socialMedia1">Rede Social</label><br>
         <input
           type="textarea"
           class="input"
           id="socialMedia1"
           name="socialMedia1"
-          placeholder="cole o link"
+          placeholder="qual o nome?"
+          [value]="card.name1"
         ><br>
-        <label for="socialMedia2">Link Rede Social</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="urlSocialMedia1"
+          name="urlSocialMedia1"
+          placeholder="log na sua rede social e cole o link aqui"
+          [value]="card.url1"
+        ><br>
+        <label for="socialMedia2">Rede Social</label><br>
         <input
           type="textarea"
           class="input"
           id="socialMedia2"
           name="socialMedia2"
-          placeholder="cole o link"
+          placeholder="qual o nome?"
+          [value]="card.name2"
         ><br>
-        <label for="socialMedia3">Link Rede Social</label><br>
+        <input
+          type="textarea"
+          class="input"
+          id="urlSocialMedia2"
+          name="urlSocialMedia2"
+          placeholder="log na sua rede social e cole o link aqui"
+          [value]="card.url2"
+        ><br>
+        <label for="socialMedia3">Rede Social</label><br>
         <input
           type="textarea"
           class="input"
           id="socialMedia3"
-          name="socialMedia3"
-          placeholder="cole o link"
+          name="socialMedia2"
+          placeholder="qual o nome?"
+          [value]="card.name3"
+        ><br>
+        <input
+          type="textarea"
+          class="input"
+          id="urlSocialMedia3"
+          name="urlSocialMedia3"
+          placeholder="log na sua rede social e cole o link aqui"
+          [value]="card.url3"
+        ><br>
+        <input
+          type="email"
+          class="input"
+          id="email"
+          name="email"
+          placeholder="Seu e-mail"
+          [value]="card.email"
+        ><br>
+        <input
+          type="textarea"
+          class="input"
+          id="telefone"
+          name="telefone"
+          placeholder="Seu telefone "
+          [value]="card.telefone"
         ><br>
         <div class="acoes">
-          <button (click)="criarPensamento()" class="botao">Salvar</button>
-          <button (click)="cancelar()" class="botao">Cancelar</button>
+          <button (click)="criarCard()" class="btn btn-primary">Salvar</button>
+          <button (click)="cancelar()" class="btn btn-primary">Cancelar</button>
         </div>
       </form>
     </div>
     <div class="col-5">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#!" class="btn btn-primary">Button</a>
+      <div class="card ">
+        <div class="card-body card">
+          <img class="circle" src="../../../../assets/img/myPicture.png">
+          <h5 class="card-title">{{ card.name }}</h5> // property binding com interpolação {{}}
+          <a href="{{ card.url1 }}" target="_blank"  class="buttonLink">{{ card.name1 }}</a>
+          <a href="{{ card.url2 }}" target="_blank"  class="buttonLink">{{ card.name2 }}</a>
+          <a href="{{ card.url3 }}" target="_blank"  class="buttonLink">{{ card.name3 }}</a>
+          <a href="{{ card.email }}" target="_blank"  class="email">{{ card.email }}</a>
+          <a href="{{ card.telefone }}" target="_blank"  class="telefone">{{ card.telefone }}</a>
         </div>
       </div>
     </div>
