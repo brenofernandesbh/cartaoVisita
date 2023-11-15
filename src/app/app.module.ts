@@ -26,6 +26,8 @@ import { CardCreateComponent } from './components/cards/card-create/card-create.
 import { CardReadComponent } from './components/cards/card-read/card-read.component';
 import { CardUpdateComponent } from './components/cards/card-update/card-update.component';
 import { CardDeleteComponent } from './components/cards/card-delete/card-delete.component';
+import { FormsModule } from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { CardDeleteComponent } from './components/cards/card-delete/card-delete.
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

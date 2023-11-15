@@ -1,0 +1,123 @@
+.action {
+  display: flex;
+  justify-content: flex-end
+}
+
+.functionButton {
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.pensamento {
+  background-color: #F8F9FE;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.pensamento .conteudo {
+  margin: 1rem auto;
+  word-wrap: break-word;
+}
+
+.pensamento .autoria {
+  word-wrap: break-word;
+}
+
+.pensamento-g {
+  width: 556px;
+}
+
+.pensamento-p {
+  width: 262px;
+}
+
+@media screen and (max-width: 768px) {
+  .pensamento-g {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .pensamento-p {
+    width: 100%;
+  }
+}
+
+
+/* card configuration */
+
+.card1 {
+  box-shadow: 8px 8px 0px #154580;
+}
+
+.card2 {
+  box-shadow: 8px 8px 0px #6BD1FF;
+}
+
+.card3 {
+  box-shadow: 8px 8px 0px #84EEC1;
+}
+
+.card{
+  width: 280px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right:10px;
+  margin-left: 10px;
+}
+
+.input{
+  width: 300px;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* picture configuration */
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+}
+
+/* button configuration */
+
+.buttonLink {
+  width: 150px;
+  height: 42px;
+  border-radius: 15px;
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Adicionando uma transição suave */
+  margin-bottom: 10px;
+
+  /* Adicionando uma sombra inicial */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+.buttonLink:hover {
+  background-color: #2980b9; /* Alterando a cor de fundo no hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adicionando uma sombra mais pronunciada no hover */
+}
+
+/* email configuration */
+
+.email{
+  margin-bottom: 10px;
+}
+
+/* tefefone configuration */
+
+.telefone{
+  margin-bottom: 10px;
+}

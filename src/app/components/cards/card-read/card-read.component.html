@@ -1,1 +1,15 @@
-<p>card-read works!</p>
+<header class="title">
+  <h3>Área de cartões</h3>
+  <button routerLink="/criarCard" class="btn btn-primary">Adicionar Cartão</button>
+</header>
+<div class="container" *ngIf="cardList.length > 0, else noCard">
+  <div class="card" *ngFor="let card of cardList">
+    <app-card [card]="card"></app-card>
+  </div>
+</div>
+<ng-template #noCard>
+  <div class="noCard">
+    <h4>Ainda não foi criado nenhum card</h4>
+  </div>
+</ng-template>
+

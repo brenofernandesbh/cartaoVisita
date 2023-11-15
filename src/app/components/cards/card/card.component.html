@@ -1,1 +1,19 @@
-<p>card works!</p>
+<div class="card {{ card.modelo }}">
+  <div class="card-body card">
+    <img class="circle" src="../../../../assets/img/{{ card.picture }}.png">
+    <h5 class="card-title">{{ card.name }}</h5>
+    <a href="{{ card.url1 }}" target="_blank" class="buttonLink">{{ card.name1 }}</a>
+    <a href="{{ card.url2 }}" target="_blank" class="buttonLink">{{ card.name2 }}</a>
+    <a href="{{ card.url3 }}" target="_blank" class="buttonLink">{{ card.name3 }}</a>
+    <a href="{{ card.email }}" target="_blank" class="email">{{ card.email }}</a>
+    <a href="{{ card.telefone }}" target="_blank" class="telefone">{{ card.telefone }}</a>
+    <div class="action">
+      <button class="functionButton">
+        <img src="/assets/img/icone-editar.png" routerLink="/editarCard" alt="icone de editar">
+      </button>
+      <button class="functionButton">
+        <img src="/assets/img/icone-excluir.png" routerLink="/deletarCard" alt="icone de excluir">
+      </button>
+    </div>
+  </div>
+</div>
