@@ -1,9 +1,9 @@
 import {createComponent, NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CardCreateComponent} from "./components/cards/card-create/card-create.component";
-import {CardUpdateComponent} from "./components/cards/card-update/card-update.component";
-import {CardReadComponent} from "./components/cards/card-read/card-read.component";
-import {CardDeleteComponent} from "./components/cards/card-delete/card-delete.component";
+import { CardCreateComponent } from "./components/cards/card-create/card-create.component";
+import { CardUpdateComponent } from "./components/cards/card-update/card-update.component";
+import { CardReadComponent } from "./components/cards/card-read/card-read.component";
+import { CardDeleteComponent } from "./components/cards/card-delete/card-delete.component";
 
 const routes: Routes = [
   {
@@ -24,9 +24,9 @@ const routes: Routes = [
     component: CardReadComponent
   },
   {
-    path: 'deletarCard',
+    path: 'cards/cardDelete/:id',
     component: CardDeleteComponent
-  },
+  }
 
 ];
 

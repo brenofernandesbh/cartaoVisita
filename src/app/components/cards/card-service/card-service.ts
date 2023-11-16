@@ -10,7 +10,7 @@ export class CardService implements OnInit {
 
   constructor( private http: HttpClient ) { }
 
-  private  readonly API = 'http://localhost:3000/cards'
+  private readonly API = 'http://localhost:3000/cards'
 
   /**
    * method to show the cards - Método para listar os cards
@@ -23,6 +23,16 @@ export class CardService implements OnInit {
     return this.http.post<Card>(this.API, card)
   }
 
+  // @ts-ignore
+  cardDelete(id: number): Observable<Card> {
+    const url = `${this.API}/${id}`
+    return this.http.delete<Card>(url)
+  }
+
+  getCardById(id: number): Observable<Card> {
+    const url = `${this.API}/${id}`
+    return this.http.get<Card>(url)
+  }
 
   ngOnInit(){
 
