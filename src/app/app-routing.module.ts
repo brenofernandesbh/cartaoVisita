@@ -24,7 +24,7 @@ const routes: Routes = [
     component: CardReadComponent
   },
   {
-    path: 'cards/cardDelete/:id',
+    path: 'cards/excluirCard/:id',
     component: CardDeleteComponent
   }
 

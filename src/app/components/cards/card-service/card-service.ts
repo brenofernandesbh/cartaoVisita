@@ -1,12 +1,12 @@
-import {Injectable, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Card} from "../interface/card";
-import {Observable} from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Card } from "../interface/card";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CardService implements OnInit {
+export class CardService {
 
   constructor( private http: HttpClient ) { }
 
@@ -24,7 +24,7 @@ export class CardService implements OnInit {
   }
 
   // @ts-ignore
-  cardDelete(id: number): Observable<Card> {
+  excluir(id: number): Observable<Card> {
     const url = `${this.API}/${id}`
     return this.http.delete<Card>(url)
   }
@@ -34,9 +34,5 @@ export class CardService implements OnInit {
     return this.http.get<Card>(url)
   }
 
-  ngOnInit(){
-
-
-  }
 
 }

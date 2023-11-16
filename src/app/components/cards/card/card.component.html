@@ -8,11 +8,11 @@
     <a href="{{ card.email }}" target="_blank" class="email">{{ card.email }}</a>
     <a href="{{ card.telefone }}" target="_blank" class="telefone">{{ card.telefone }}</a>
     <div class="action">
-      <button class="functionUpdate" routerLink="/editarCard">
-        <img class="icon" src="/assets/img/icone-editar.png"  alt="icone de editar">
+      <button class="functionUpdate">
+        <img class="icon" src="/assets/img/icone-editar.png"  alt="icone de editar" routerLink="/editarCard">
       </button>
-      <button class="functionDelete" routerLink="/cards/cardDelete/{{card.id}}" >
-        <img class="icon" src="/assets/img/icone-excluir.png"  alt="icone de excluir">
+      <button class="functionDelete">
+        <img class="icon" src="/assets/img/icone-excluir.png" alt="icone de excluir" routerLink="/cards/excluirCard/{{card.id}}">
       </button>
     </div>
   </div>

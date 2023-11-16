@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Card } from "../interface/card";
 import { CardService } from "../card-service/card-service";
 import { ActivatedRoute, Router} from "@angular/router";
@@ -10,7 +10,7 @@ import { ActivatedRoute, Router} from "@angular/router";
 })
 export class CardDeleteComponent implements OnInit{
 
-  card: Card = {
+  @Input() card: Card = {
     id: 0,
     name: '',
     picture: '',
@@ -38,7 +38,7 @@ export class CardDeleteComponent implements OnInit{
 
   delete() {
     if(this.card.id){
-      this.service.cardDelete(this.card.id).subscribe(() => {
+      this.service.excluir(this.card.id).subscribe(() => {
         this.router.navigate(['/exibirCard'])
       })
     }
