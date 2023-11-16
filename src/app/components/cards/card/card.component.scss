@@ -1,48 +1,23 @@
+
 .action {
   display: flex;
   justify-content: flex-end
-}
+};
 
-.functionButton {
+.functionUpdate {
   border: none;
   cursor: pointer;
-  margin-right: 10px;
   margin-top: 10px;
-}
+  background-color: transparent;
 
-.pensamento {
-  background-color: #F8F9FE;
-  padding: 1rem;
-  box-sizing: border-box;
-}
+};
 
-.pensamento .conteudo {
-  margin: 1rem auto;
-  word-wrap: break-word;
-}
-
-.pensamento .autoria {
-  word-wrap: break-word;
-}
-
-.pensamento-g {
-  width: 556px;
-}
-
-.pensamento-p {
-  width: 262px;
-}
-
-@media screen and (max-width: 768px) {
-  .pensamento-g {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 426px) {
-  .pensamento-p {
-    width: 100%;
-  }
-}
+.functionDelete {
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: transparent;
+};
 
 
 /* card configuration */

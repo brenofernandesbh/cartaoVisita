@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Card} from "../interface/card";
 import {CardService} from "../card-service/card-service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-card-create',
@@ -23,19 +24,24 @@ export class CardCreateComponent implements OnInit {
         modelo: ''
     }
 
-    constructor(private service: CardService) {
+    constructor(
+        private service: CardService,
+        private router: Router
+    ) {
     }
 
     ngOnInit(): void {
     }
 
     criarCard(): void {
-        this.service.criar(this.card).subscribe()
+        this.service.criar(this.card).subscribe(() =>{
+            this.router.navigate(['/exibirCard'])
+        })
 
     };
 
     cancelar(): void {
-        alert("cancelou a criação de um novo card")
+        this.router.navigate(['/exibirCard'])
     }
 
 

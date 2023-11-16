@@ -1,6 +1,6 @@
 <section class="container">
     <header class="header">
-        <h3>CARD:</h3>
+        <h3 class="h3">CARD</h3>
     </header>
     <div class="row">
         <div class="col-7 container-form">
@@ -11,12 +11,10 @@
 <!--                    <input type="submit" value="Enviar">-->
 <!--                </form>-->
                 <label for="picture">Foto</label><br>
-                <input>
                 <select class="input" id="picture" name="picture" [(ngModel)]="card.picture">
-                    <option value="model1">myPictureMan</option>
-                    <option value="model2">myPictureWoman</option>
+                    <option value="myPictureMan">Foto Homem</option>
+                    <option value="myPictureWoman">Foto Mulher</option>
                 </select>
-
                 <br>
                 <label for="name">Nome</label><br>
                 <input
@@ -33,7 +31,7 @@
                         class="input"
                         id="socialMedia1"
                         name="socialMedia1"
-                        placeholder="qual o nome?"
+                        placeholder="Qual rede social?"
                         [(ngModel)]="card.name1"
                 ><br>
                 <input
@@ -50,7 +48,7 @@
                         class="input"
                         id="socialMedia2"
                         name="socialMedia2"
-                        placeholder="qual o nome?"
+                        placeholder="Qual rede social?"
                         [(ngModel)]="card.name2"
                 ><br>
                 <input
@@ -67,7 +65,7 @@
                         class="input"
                         id="socialMedia3"
                         name="socialMedia3"
-                        placeholder="qual o nome?"
+                        placeholder="Qual rede social?"
                         [(ngModel)]="card.name3"
                 ><br>
                 <input
@@ -78,6 +76,7 @@
                         placeholder="log na sua rede social e cole o link aqui"
                         [(ngModel)]="card.url3"
                 ><br>
+                <label for="email">E-mail</label><br>
                 <input
                         type="email"
                         class="input"
@@ -86,6 +85,7 @@
                         placeholder="Seu e-mail"
                         [(ngModel)]="card.email"
                 ><br>
+                <label for="telefone">Telefone</label><br>
                 <input
                         type="textarea"
                         class="input"
@@ -94,10 +94,11 @@
                         placeholder="Seu telefone "
                         [(ngModel)]="card.telefone"
                 ><br>
+                <label for="modelo">Escolha um modelo</label><br>
                 <select class="input" id="modelo" name="modelo" [(ngModel)]="card.modelo">
-                    <option value="model1">Modelo 1</option>
-                    <option value="model2">Modelo 2</option>
-                    <option value="model3">Modelo 3</option>
+                    <option value="card1">Modelo 1</option>
+                    <option value="card2">Modelo 2</option>
+                    <option value="card3">Modelo 3</option>
                 </select>
                 <div class="acoes">
                     <button (click)="criarCard()" class="btn btn-primary">Salvar</button>
@@ -106,7 +107,7 @@
             </form>
         </div>
         <div class="col-5">
-            <div class="card ">
+            <div class="card {{ card.modelo }}">
                 <div class="card-body card">
                     <img class="circle" src="../../../../assets/img/{{ card.picture }}.png">
                     <h5 class="card-title">{{ card.name }}</h5>
