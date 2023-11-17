@@ -3,6 +3,9 @@ import {Card} from "../interface/card";
 import {CardService} from "../card-service/card-service";
 import {Router} from "@angular/router";
 
+/**
+ * Component create card
+ */
 @Component({
     selector: 'app-card-create',
     templateUrl: './card-create.component.html',
@@ -10,6 +13,9 @@ import {Router} from "@angular/router";
 })
 export class CardCreateComponent implements OnInit {
 
+    /**
+     * object empty
+     */
     card: Card = {
         name: '',
         picture: '',
@@ -24,6 +30,11 @@ export class CardCreateComponent implements OnInit {
         modelo: ''
     }
 
+    /**
+     * Constructor of the class that takes parameters.
+     * @param CardService - An injectable instance of the CardService.
+     * @param router - The Angular Router service.
+     */
     constructor(
         private service: CardService,
         private router: Router
@@ -32,17 +43,13 @@ export class CardCreateComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
-    criarCard(): void {
-        this.service.criar(this.card).subscribe(() =>{
-            this.router.navigate(['/exibirCard'])
+    cardCreate(): void {
+        this.service.createCardService(this.card).subscribe(() =>{
+            this.router.navigate(['/readCard'])
         })
-
     };
 
-    cancelar(): void {
-        this.router.navigate(['/exibirCard'])
+    cancelCard(): void {
+        this.router.navigate(['/readCard'])
     }
-
-
 }

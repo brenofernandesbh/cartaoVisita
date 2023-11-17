@@ -1,6 +1,6 @@
 <header class="title">
   <h3>Área de cartões</h3>
-  <button routerLink="/criarCard" class="btn btn-primary">Adicionar Cartão</button>
+  <button routerLink="/createCard" class="btn btn-primary">Adicionar Cartão</button>
 </header>
 <div class="container" *ngIf="cardList.length > 0, else noCard">
   <div class="card" *ngFor="let card of cardList">

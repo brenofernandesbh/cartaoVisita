@@ -9,10 +9,10 @@
     <a href="{{ card.telefone }}" target="_blank" class="telefone">{{ card.telefone }}</a>
     <div class="action">
       <button class="functionUpdate">
-        <img class="icon" src="/assets/img/icone-editar.png"  alt="icone de editar" routerLink="/editarCard">
+        <img class="icon" src="/assets/img/icone-editar.png"  alt="icone de editar" routerLink="/cards/updateCard/{{card.id}}">
       </button>
       <button class="functionDelete">
-        <img class="icon" src="/assets/img/icone-excluir.png" alt="icone de excluir" routerLink="/cards/excluirCard/{{card.id}}">
+        <img class="icon" src="/assets/img/icone-excluir.png" alt="icone de excluir" routerLink="/cards/deleteCard/{{card.id}}">
       </button>
     </div>
   </div>

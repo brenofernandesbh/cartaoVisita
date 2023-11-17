@@ -8,23 +8,23 @@ import { CardDeleteComponent } from "./components/cards/card-delete/card-delete.
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'criarCard', // path do caminho que desejamos que inicie a aplicação
+    redirectTo: 'readCard', // path do caminho que desejamos que inicie a aplicação
     pathMatch: 'full'
   },
   {
-    path: 'criarCard',
+    path: 'createCard', // 'criarCard' 'createCard'
     component: CardCreateComponent
   },
   {
-    path: 'editarCard',
+    path: 'cards/updateCard/:id', // 'cards/editarCard/:id'  'cards/updateCard/:id'
     component: CardUpdateComponent
   },
   {
-    path: 'exibirCard',
+    path: 'readCard', //'exibirCard' 'readCard'
     component: CardReadComponent
   },
   {
-    path: 'cards/excluirCard/:id',
+    path: 'cards/deleteCard/:id',  // 'cards/excluirCard/:id'  'cards/deleteCard/:id'
     component: CardDeleteComponent
   }
 

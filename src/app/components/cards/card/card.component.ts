@@ -6,8 +6,11 @@ import {Card} from "../interface/card";
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit{
+export class CardComponent {
 
+  /**
+   * class Card
+   */
   @Input() card: Card = {
     id: 0,
     name:'Alice Barreiro',
@@ -22,20 +25,4 @@ export class CardComponent implements OnInit{
     telefone: '3353353351',
     modelo: 'card3'
   }
-
-  constructor() {
-  }
-  ngOnInit():void { }
-
-  criarCard(): void {
-    alert("criou um novo card")
-
-  };
-
-  cancelar(): void {
-    alert("cancelou a criação de um novo card")
-  }
-
-
-
 }

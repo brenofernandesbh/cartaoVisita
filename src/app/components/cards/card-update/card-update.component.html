@@ -1,1 +1,127 @@
-<p>card-update works!</p>
+<section class="container">
+    <header class="header">
+        <h3 class="h3">EDITAR CARD</h3>
+    </header>
+    <div class="row">
+        <div class="col-7 container-form">
+            <form action="">
+                <!--                <form action="../../../../assets/img/" method="post" enctype="multipart/form-data">-->
+                <!--                    <label for="MyFoto">Adicionar Foto:</label><br>-->
+                <!--                    <input type="file" id="MyFoto" name="myPicture" accept="image/*"><br>-->
+                <!--                    <input type="submit" value="Enviar">-->
+                <!--                </form>-->
+                <label for="picture">Foto</label><br>
+                <select class="input" id="picture" name="picture" [(ngModel)]="card.picture">
+                    <option value="myPictureMan">Foto Homem</option>
+                    <option value="myPictureWoman">Foto Mulher</option>
+                </select>
+                <br>
+                <label for="name">Nome</label><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="name"
+                        name="name"
+                        placeholder="Seu nome"
+                        [(ngModel)]="card.name"
+                ><br>
+                <label for="socialMedia1">Rede Social</label><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="socialMedia1"
+                        name="socialMedia1"
+                        placeholder="Qual rede social?"
+                        [(ngModel)]="card.name1"
+                ><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="urlSocialMedia1"
+                        name="urlSocialMedia1"
+                        placeholder="log na sua rede social e cole o link aqui"
+                        [(ngModel)]="card.url1"
+                ><br>
+                <label for="socialMedia2">Rede Social</label><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="socialMedia2"
+                        name="socialMedia2"
+                        placeholder="Qual rede social?"
+                        [(ngModel)]="card.name2"
+                ><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="urlSocialMedia2"
+                        name="urlSocialMedia2"
+                        placeholder="log na sua rede social e cole o link aqui"
+                        [(ngModel)]="card.url2"
+                ><br>
+                <label for="socialMedia3">Rede Social</label><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="socialMedia3"
+                        name="socialMedia3"
+                        placeholder="Qual rede social?"
+                        [(ngModel)]="card.name3"
+                ><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="urlSocialMedia3"
+                        name="urlSocialMedia3"
+                        placeholder="log na sua rede social e cole o link aqui"
+                        [(ngModel)]="card.url3"
+                ><br>
+                <label for="email">E-mail</label><br>
+                <input
+                        type="email"
+                        class="input"
+                        id="email"
+                        name="email"
+                        placeholder="Seu e-mail"
+                        [(ngModel)]="card.email"
+                ><br>
+                <label for="telefone">Telefone</label><br>
+                <input
+                        type="textarea"
+                        class="input"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="Seu telefone "
+                        [(ngModel)]="card.telefone"
+                ><br>
+                <label for="modelo">Escolha um modelo</label><br>
+                <select class="input" id="modelo" name="modelo" [(ngModel)]="card.modelo">
+                    <option value="card1">Modelo 1</option>
+                    <option value="card2">Modelo 2</option>
+                    <option value="card3">Modelo 3</option>
+                </select>
+                <div class="acoes">
+                    <button (click)="cardUpdate()" class="btn btn-primary">Salvar</button>
+                    <button (click)="cancelCard()" class="btn btn-primary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-5">
+            <div class="card {{ card.modelo }}">
+                <div class="card-body card">
+                    <img class="circle" src="../../../../assets/img/{{ card.picture }}.png">
+                    <h5 class="card-title">{{ card.name }}</h5>
+                    <a href="{{ card.url1 }}" target="_blank" class="buttonLink">{{ card.name1 }}</a>
+                    <a href="{{ card.url2 }}" target="_blank" class="buttonLink">{{ card.name2 }}</a>
+                    <a href="{{ card.url3 }}" target="_blank" class="buttonLink">{{ card.name3 }}</a>
+                    <a href="{{ card.email }}" target="_blank" class="email">{{ card.email }}</a>
+                    <a href="{{ card.telefone }}" target="_blank" class="telefone">{{ card.telefone }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <br><br>
+    </footer>
+</section>
+

@@ -1,0 +1,92 @@
+.h3 {
+  margin-top: 10px;
+  margin-left: 230px;
+  color: #154580;
+
+};
+
+.col-5 {
+  margin-top: 60px;
+};
+
+.card{
+  width: 280px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+
+.input{
+  width: 300px;
+};
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+
+/* picture configuration */
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+};
+
+/* button configuration */
+
+.btn {
+  width: 130px;
+  height: 32px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+};
+
+.buttonLink {
+  width: 150px;
+  height: 42px;
+  border-radius: 15px;
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Adicionando uma transição suave */
+  margin-bottom: 10px;
+
+  /* Adicionando uma sombra inicial */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+};
+.buttonLink:hover {
+  background-color: #2980b9; /* Alterando a cor de fundo no hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adicionando uma sombra mais pronunciada no hover */
+};
+
+/* email configuration */
+
+.email{
+  margin-bottom: 10px;
+};
+
+/* tefefone configuration */
+
+.telefone{
+  margin-bottom: 10px;
+};
+
+/* card configuration */
+
+.card1 {
+  box-shadow: 8px 8px 0px #154580;
+}
+
+.card2 {
+  box-shadow: 8px 8px 0px #6BD1FF;
+}
+
+.card3 {
+  box-shadow: 8px 8px 0px #84EEC1;
+}
+

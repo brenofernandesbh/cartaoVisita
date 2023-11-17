@@ -11,14 +11,15 @@ export class CardReadComponent implements OnInit{
 
   cardList : Card [] = []
 
-  constructor(private service: CardService) {
+  constructor(
+      private service: CardService
+  ) {
   }
 
   ngOnInit() {
-    this.service.listar().subscribe((cardList) => {
+    this.service.readCardService().subscribe((cardList) => {
       this.cardList = cardList
     })
 
   }
-
 }

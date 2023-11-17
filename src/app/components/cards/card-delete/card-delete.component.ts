@@ -29,6 +29,7 @@ export class CardDeleteComponent implements OnInit{
       private router: Router,
       private route: ActivatedRoute
   ) {  }
+
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')
     this.service.getCardById(parseInt(id!)).subscribe((card) => {
@@ -36,16 +37,16 @@ export class CardDeleteComponent implements OnInit{
     })
   }
 
-  delete() {
+  cardDelete() {
     if(this.card.id){
-      this.service.excluir(this.card.id).subscribe(() => {
-        this.router.navigate(['/exibirCard'])
+      this.service.deleteCardService(this.card.id).subscribe(() => {
+        this.router.navigate(['/readCard'])
       })
     }
   }
 
-  cancel(){
-    this.router.navigate(['/exibirCard'])
+  cancelCard(){
+    this.router.navigate(['/readCard'])
   }
 
 }
