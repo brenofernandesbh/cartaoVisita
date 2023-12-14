@@ -5,17 +5,11 @@
     <div class="row">
         <div class="col-7 container-form">
             <form action="">
-                <!--                <form action="../../../../assets/img/" method="post" enctype="multipart/form-data">-->
-                <!--                    <label for="MyFoto">Adicionar Foto:</label><br>-->
-                <!--                    <input type="file" id="MyFoto" name="myPicture" accept="image/*"><br>-->
-                <!--                    <input type="submit" value="Enviar">-->
-                <!--                </form>-->
-                <label for="picture">Foto</label><br>
-                <select class="input" id="picture" name="picture" [(ngModel)]="card.picture">
-                    <option value="myPictureMan">Foto Homem</option>
-                    <option value="myPictureWoman">Foto Mulher</option>
-                </select>
-                <br>
+              <label for="picture">Adicionar Foto:</label><br>
+              <form id="picture" (keyup)="cardUpdate()">
+                <!-- Outros campos do seu formulário -->
+                <input type="file" (change)="onFileSelected($event)" />
+              </form>
                 <label for="name">Nome</label><br>
                 <input
                         type="textarea"
@@ -109,7 +103,7 @@
         <div class="col-5">
             <div class="card {{ card.modelo }}">
                 <div class="card-body card">
-                    <img class="circle" src="../../../../assets/img/{{ card.picture }}.png">
+                  <img class="circle" [src]="card.picture" alt="Imagem do Card">
                     <h5 class="card-title">{{ card.name }}</h5>
                     <a href="{{ card.url1 }}" target="_blank" class="buttonLink">{{ card.name1 }}</a>
                     <a href="{{ card.url2 }}" target="_blank" class="buttonLink">{{ card.name2 }}</a>

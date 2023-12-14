@@ -52,4 +52,29 @@ export class CardCreateComponent implements OnInit {
     cancelCard(): void {
         this.router.navigate(['/readCard'])
     }
+
+  selectedFile: File | null = null;
+
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0] as File;
+
+    // Converte a imagem para base64
+    this.convertToBase64();
+  }
+
+  convertToBase64() {
+    if (this.selectedFile) {
+      const reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.card.picture = event.target.result;
+      };
+      reader.readAsDataURL(this.selectedFile);
+    }
+  }
+
+  onSubmit() {
+    // Lógica para enviar o objeto 'card' para o backend
+    console.log('Card object with base64 image:', this.card);
+  }
+
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Card } from "../interface/card";
-import { Observable } from "rxjs";
+import {Observable, switchMap} from "rxjs";
 
 /**
  * decorator
@@ -25,6 +25,13 @@ export class CardService {
      */
   private readonly API = 'http://localhost:3000/cards'
 
+
+  uploadImage(base64Image: string): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('image', base64Image);
+
+    return this.http.post(`${this.API}/upload`, formData);
+  }
    /**
    * method for listing cards
    */
@@ -35,17 +42,32 @@ export class CardService {
    /**
    * method for create card
    */
-  createCardService(card: Card): Observable<Card> {
-    return this.http.post<Card>(this.API, card)
-  }
+   createCardService(card: Card): Observable<Card> {
+     return this.http.post<Card>(this.API, card);
+   }
 
    /**
    * method for update card
    */
-  updateCardService(card: Card) : Observable<Card> {
-    const url = `${this.API}/${card.id}`
-    return this.http.put<Card>(url, card)
-  }
+   updateCardService(card: Card): Observable<Card> {
+     const url = `${this.API}/${card.id}`;
+
+     // Verifique se o card tem uma nova imagem
+     if (card.picture && card.picture.startsWith('data:image')) {
+       // Faça o upload da nova imagem
+       return this.uploadImage(`card.picture`).pipe(
+         switchMap((imageResponse) => {
+           // Atualize o campo 'picture' no card com a URL da imagem
+           card.picture = imageResponse.url; // Substitua 'url' pelo campo apropriado que seu backend retorna
+           // Agora, atualize o card no backend com a nova URL da imagem
+           return this.http.put<Card>(url, card);
+         })
+       );
+     } else {
+       // Se não houver uma nova imagem, simplesmente atualize o card
+       return this.http.put<Card>(url, card);
+     }
+   }
 
    /**
    * method for delete card

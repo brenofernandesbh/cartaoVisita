@@ -25,24 +25,56 @@ export class CardUpdateComponent implements OnInit {
     modelo: ''
   }
 
+  // Adicionamos um novo campo para lidar com a nova imagem
+  newPicture: File | null = null;
+
   constructor(
-      private service: CardService,
-      private router: Router,
-      private route: ActivatedRoute
-              ) {
+    private service: CardService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')
     this.service.getCardById(parseInt(id!)).subscribe((card) =>
-    this.card = card
-    )}
+      this.card = card
+    )
+  }
 
-  cardUpdate() { //editarCard() cardUpdate()
-    this.service.updateCardService(this.card).subscribe(() =>
-        this.router.navigate(['/readCard'])
-    )}
-  cancelCard(){ //cancelar() cancelCard()
+  onFileSelected(event: any) {
+    this.newPicture = event.target.files[0] as File;
+  }
+
+  cardUpdate() {
+    // Se houver uma nova imagem, converte para base64
+    if (this.newPicture) {
+      const reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.card.picture = event.target.result;
+        // Chama o método para atualizar o card no backend
+        this.updateCard();
+      };
+      reader.readAsDataURL(this.newPicture);
+    } else {
+      // Se não houver uma nova imagem, apenas chama o método para atualizar o card no backend
+      this.updateCard();
+    }
+  }
+
+// Método para atualizar o card no backend
+  private updateCard() {
+    this.service.updateCardService(this.card).subscribe(() => {
+      this.router.navigate(['/readCard']);
+    }, (error) => {
+      console.error('Erro durante a atualização do card', error);
+      // Adicione um tratamento de erro aqui, se necessário
+    });
+  }
+
+
+  cancelCard() {
     this.router.navigate(['/readCard'])
   }
 }
+
