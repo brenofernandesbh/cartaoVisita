@@ -28,6 +28,8 @@ import { CardUpdateComponent } from './components/cards/card-update/card-update.
 import { CardDeleteComponent } from './components/cards/card-delete/card-delete.component';
 import { FormsModule } from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     MdbValidationModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
